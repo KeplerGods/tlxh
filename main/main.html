@@ -1,121 +1,149 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 
 	<head>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<title></title>
-		<script src="../js/mui.min.js"></script>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../css/comm.css" rel="stylesheet" />
 	</head>
 
 	<body>
 		<div class="mui-content">
-			<div id="slider" class="mui-slider">
-				<div class="mui-slider-group mui-slider-loop">
-					<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
-					<div class="mui-slider-item mui-slider-item-duplicate">
-						<a href="#">
-							<img src="http://placehold.it/400x300">
-						</a>
+			<div class="mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<div id="sliderMain" class="mui-slider bannerHeight">
+						<div class="mui-slider-group mui-slider-loop">
+							<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+							<div class="mui-slider-item mui-slider-item-duplicate">
+								<a href="#">
+									<img src="../images/user_background.jpg">
+								</a>
+							</div>
+							<!-- 第一张 -->
+							<div class="mui-slider-item">
+								<a href="#">
+									<img src="../images/user_background.jpg">
+								</a>
+							</div>
+							<!-- 第二张 -->
+							<div class="mui-slider-item">
+								<a href="#">
+									<img src="../images/user_background.jpg">
+								</a>
+							</div>
+							<!-- 第三张 -->
+							<div class="mui-slider-item">
+								<a href="#">
+									<img src="../images/user_background.jpg">
+								</a>
+							</div>
+							<!-- 第四张 -->
+							<div class="mui-slider-item">
+								<a href="#">
+									<img src="../images/user_background.jpg">
+								</a>
+							</div>
+							<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+							<div class="mui-slider-item mui-slider-item-duplicate">
+								<a href="#">
+									<img src="../images/user_background.jpg">
+								</a>
+							</div>
+						</div>
+						<div class="mui-slider-indicator">
+							<div class="mui-indicator mui-active"></div>
+							<div class="mui-indicator"></div>
+							<div class="mui-indicator"></div>
+							<div class="mui-indicator"></div>
+						</div>
 					</div>
-					<!-- 第一张 -->
-					<div class="mui-slider-item">
-						<a href="#">
-							<img src="http://placehold.it/400x300">
-						</a>
-					</div>
-					<!-- 第二张 -->
-					<div class="mui-slider-item">
-						<a href="#">
-							<img src="http://placehold.it/400x300">
-						</a>
-					</div>
-					<!-- 第三张 -->
-					<div class="mui-slider-item">
-						<a href="#">
-							<img src="http://placehold.it/400x300">
-						</a>
-					</div>
-					<!-- 第四张 -->
-					<div class="mui-slider-item">
-						<a href="#">
-							<img src="http://placehold.it/400x300">
-						</a>
-					</div>
-					<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
-					<div class="mui-slider-item mui-slider-item-duplicate">
-						<a href="#">
-							<img src="http://placehold.it/400x300">
-						</a>
-					</div>
-				</div>
-				<div class="mui-slider-indicator">
-					<div class="mui-indicator mui-active"></div>
-					<div class="mui-indicator"></div>
-					<div class="mui-indicator"></div>
-					<div class="mui-indicator"></div>
+					<div class="mui-table-view-cell">热点</div>
+					<ul id="hot" class="mui-table-view">
+						<li class="mui-table-view-cell" v-for="item in items" @tap="open_detail(item)">
+							<a class="mui-navigate">
+								{{item.title}}
+							</a>
+						</li>
+					</ul>
+					<div class="mui-table-view-cell">频道</div>
+					<ul id="gridCategory" class="mui-table-view mui-grid-view mui-grid-9">
+						<li v-for="item in items" class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" @tap="open_category(item)">
+							<a href="#">
+								<span :class="item.icon"></span>
+								<div class="mui-media-body">{{item.name}}</div>
+							</a>
+						</li>
+					</ul>
 				</div>
 			</div>
-			<div class="mui-table-view-cell">热点</div>
-			<ul class="mui-table-view">
-				<li class="mui-table-view-cell">
-					<a class="mui-navigate">
-						Item 1
-					</a>
-				</li>
-				<li class="mui-table-view-cell">
-					<a class="mui-navigate">
-						Item 2
-					</a>
-				</li>
-				<li class="mui-table-view-cell">
-					<a class="mui-navigate">
-						Item 3
-					</a>
-				</li>
-			</ul>
-			<div class="mui-table-view-cell">频道</div>
-			<ul class="mui-table-view mui-grid-view mui-grid-9">
-				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-					<a href="#">
-						<span class="mui-icon mui-icon-home"></span>
-						<div class="mui-media-body">Home</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-					<a href="#">
-						<span class="mui-icon mui-icon-email"><span class="mui-badge mui-badge-red">5</span></span>
-						<div class="mui-media-body">Email</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-					<a href="#">
-						<span class="mui-icon mui-icon-chatbubble"></span>
-						<div class="mui-media-body">Chat</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-					<a href="#">
-						<span class="mui-icon mui-icon-location"></span>
-						<div class="mui-media-body">Location</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-					<a href="#">
-						<span class="mui-icon mui-icon-search"></span>
-						<div class="mui-media-body">Search</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-					<a href="#">
-						<span class="mui-icon mui-icon-phone"></span>
-						<div class="mui-media-body">Phone</div>
-					</a>
-				</li>
-			</ul>
-
 		</div>
 	</body>
+	<script src="../js/mui.min.js"></script>
+	<script src="../js/vue.min.js"></script>
+	<script src="../js/mainGridData.js"></script>"
+	<script type="text/javascript">
+		mui.init()
+		var sliderMain = mui("#sliderMain");
+		sliderMain.slider({
+			interval: 3000
+		});
+		mui('.mui-scroll-wrapper').scroll({
+			scrollY: true, //是否竖向滚动
+			scrollX: false, //是否横向滚动
+			startX: 0, //初始化时滚动至x
+			startY: 0, //初始化时滚动至y
+			indicators: true, //是否显示滚动条
+			deceleration: 0.0006, //阻尼系数,系数越小滑动越灵敏
+			bounce: true //是否启用回弹
+		});
+		mui.plusReady(function() {
+			hotData.items = [{
+				title: "AA"
+			}, {
+				title: "AA"
+			}, {
+				title: "AA"
+			}, {
+				title: "AA"
+			}, {
+				title: "AA"
+			}];
+			gridData.items = grids;
+		})
+		// 热点数据
+		var hotData = new Vue({
+			el: '#hot',
+			data: {
+				items: [] //列表信息流数据
+			}
+		});
+		// 频道数据
+		var gridData = new Vue({
+			el: '#gridCategory',
+			data: {
+				items: [] //列表信息流数据
+			}
+		});
+
+		function open_category(item) {
+			var listView = plus.webview.create("submain.html", "submain", {
+				bounce: "vertical",
+				"render": "always",
+				"popGesture": "close"
+			});
+			listView.show();
+		}
+		
+		function open_detail(item){
+			var detail = plus.webview.create("detail.html", "news_detail", {
+				"bounce": "vertical",
+				"render": "always",
+				"popGesture": "close"
+			});
+			detail.show();
+		}
+	</script>
 
 </html>

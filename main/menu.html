@@ -1,55 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 
 	<head>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<script src="../js/mui.min.js"></script>
-		<link href="../css/mui.min.css" rel="stylesheet" />
-		<style type="text/css">
-			#headDetail{
-				top: 20%;
-				width: 120px;
-				height: 60px;
-			}
-			#headDetail img{
-				width: 60px;
-				height: 60px;
-				border-radius: calc(50%);
-			}
-			
-			#headDetail span{
-				top: 10%;
-			}
-			
-		</style>
 		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../css/comm.css" rel="stylesheet" />
 	</head>
 
 	<body>
 		<div class="mui-content">
-			<div id="headDetail"><img src="http://placehold.it/400x300"><span>昵称</span></div>
-			<div id="slider" class="mui-slider-cell">
-				<img src="http://placehold.it/400x300">
+			<div id="userHead"><img src="../images/user_head.jpg" /><span>狼</span></div>
+			<div id="slider" class="mui-slider">
+				<div class="mui-slider-group">
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<img class="bannerHeight" src="../images/user_background.jpg">
+					</div>
+				</div>
 			</div>
 			<ul class="mui-table-view">
-			        <li class="mui-table-view-cell">
-			            <a class="mui-navigate">
-			                Item 1
-			            </a>
-			        </li>
-			        <li class="mui-table-view-cell">
-			            <a class="mui-navigate">
-			                 Item 2
-			            </a>
-			        </li>
-			        <li class="mui-table-view-cell">
-			            <a class="mui-navigate">
-			                 Item 3
-			            </a>
-			        </li>
-			    </ul>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate mui-icon mui-icon-home">
+						登录
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate mui-icon mui-icon-home">
+						关于我们
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate mui-icon mui-icon-compose">
+						问题反馈
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate mui-icon mui-icon-info">
+						关于
+					</a>
+				</li>
+			</ul>
 		</div>
 	</body>
+	<script src="../js/mui.min.js"></script>
+	<script type="text/javascript">
+		mui.init()
+	</script>
 
 </html>
